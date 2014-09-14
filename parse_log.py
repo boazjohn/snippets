@@ -11,7 +11,6 @@ def Main():
         for line in f:
             pat = re.compile("^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}")
             ip = re.findall(pat, line)
-            # print str(ip[0] + ' '),
             patx = re.compile("\[.*.\]")
             tim = re.findall(patx, line)[0]
             tim = tim.split(" ")
@@ -28,7 +27,7 @@ def Main():
 
                 req_ten[delta] = req_ten.get(delta, 0) + 1
             else:
-                req_ten[delta] = 0
+                req_ten[delta] = req_ten.get(delta, 0)
                 ptime += datetime.timedelta(minutes = 10)
             
             vals = line.split(" ")
@@ -53,5 +52,3 @@ def Main():
     
 if __name__ == "__main__":
     Main()
-    
-    
