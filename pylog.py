@@ -1,3 +1,5 @@
+# Apache Spark Log Processor
+
 from pyspark import SparkContext, SparkConf
 import sys
 import math
